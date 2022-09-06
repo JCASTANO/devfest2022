@@ -21,7 +21,7 @@ class ApplicationTests {
 			.importPackages("com.ceiba.devfest");
 
 	@Test
-	void presentationDependsOnlyService() {
+	void controllerDependsOnlyService() {
 
 		classes()
 				.that().resideInAPackage("..controller..")
@@ -31,7 +31,7 @@ class ApplicationTests {
 	}
 
 	@Test
-	void presentationNotDependsOnPersistence() {
+	void controllerNotDependsOnPersistence() {
 
 		noClasses()
 				.that().resideInAPackage("..controller..")
@@ -40,7 +40,7 @@ class ApplicationTests {
 	}
 
 	@Test
-	void layers() {
+	void layersCheck() {
 
 		Architectures.layeredArchitecture()
 				// Define layers
