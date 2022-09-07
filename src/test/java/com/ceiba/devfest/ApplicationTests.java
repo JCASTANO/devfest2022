@@ -31,12 +31,13 @@ class ApplicationTests {
 	}
 
 	@Test
-	void controllerNotDependsOnPersistence() {
+	void domainDependsOnlyJava() {
 
-		noClasses()
-				.that().resideInAPackage("..controller..")
-				.should().dependOnClassesThat()
-				.resideInAPackage("..persistence..").check(javaClasses);
+		classes()
+				.that().resideInAPackage("..domain..")
+				.should().onlyDependOnClassesThat()
+				.resideInAnyPackage("java..")
+				.check(javaClasses);
 	}
 
 	@Test
